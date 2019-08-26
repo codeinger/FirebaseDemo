@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:490528244949:android:2bec5bcf932dc079",
+        "mobilesdk_app_id": "1:490528244949:android:788339c0bbcd0275",
         "android_client_info": {
-          "package_name": "com.codeinger.connectfirebasewithandroid"
+          "package_name": "com.codeinger.firebasedemo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "490528244949-9s0gtgu94cums6km6f0tcf403bjj3fnu.apps.googleusercontent.com",
+          "client_id": "490528244949-6e5neg4o0k2d3khs51ifmgh393gaj93a.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.codeinger.connectfirebasewithandroid",
+            "package_name": "com.codeinger.firebasedemo",
             "certificate_hash": "ec4c3926d3adf963ac1b45dbbe443dc24c534c35"
           }
         },

@@ -1,4 +1,4 @@
-package com.codeinger.connectfirebasewithandroid;
+package com.codeinger.firebasedemo;
 
 import org.junit.Test;
 
