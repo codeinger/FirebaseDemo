@@ -27,7 +27,7 @@ public class PostListActivity extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Post"), Post.class)
                         .build();
 
-        adapter = new PostAdapter(options);
+        adapter = new PostAdapter(options,this);
         recyclerView.setAdapter(adapter);
 
     }
