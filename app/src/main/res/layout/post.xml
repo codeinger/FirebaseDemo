@@ -70,6 +70,7 @@
               android:src="@drawable/edit"/>
 
           <ImageView
+              android:id="@+id/delete"
               android:layout_width="32dp"
               android:layout_height="32dp"
               android:src="@drawable/delete"/>

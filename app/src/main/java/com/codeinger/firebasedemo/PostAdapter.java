@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,6 +45,22 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PastV
         holder.title.setText(post.getTitle());
         holder.description.setText(post.getDescription());
         holder.author.setText(post.getAuthor());
+
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 FirebaseDatabase.getInstance().getReference()
+                         .child("Post")
+                         .child(getRef(i).getKey())
+                         .setValue(null)
+                         .addOnCompleteListener(new OnCompleteListener<Void>() {
+                             @Override
+                             public void onComplete(@NonNull Task<Void> task) {
+
+                             }
+                         });
+            }
+        });
 
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +127,7 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PastV
     class PastViewHolder extends RecyclerView.ViewHolder{
 
         TextView title,description,author;
-        ImageView edit;
+        ImageView edit,delete;
 
 
 
@@ -121,6 +138,7 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PastV
             description = itemView.findViewById(R.id.description);
             author = itemView.findViewById(R.id.author);
             edit = itemView.findViewById(R.id.edit);
+            delete = itemView.findViewById(R.id.delete);
 
 
         }

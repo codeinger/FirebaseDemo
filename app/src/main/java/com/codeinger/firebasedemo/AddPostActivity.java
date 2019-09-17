@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class AddPostActivity extends AppCompatActivity {
 
     private EditText title,description,author;
     private TextView text;
