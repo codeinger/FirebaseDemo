@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class AddPostActivity extends AppCompatActivity {
 
@@ -100,6 +101,7 @@ public class AddPostActivity extends AppCompatActivity {
         map.put("title",title.getText().toString());
         map.put("description",description.getText().toString());
         map.put("author",author.getText().toString());
+        map.put("like", new Random().nextInt(900)+100);
 
         Post.push()
                 .setValue(map)

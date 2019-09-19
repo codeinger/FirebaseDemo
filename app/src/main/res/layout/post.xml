@@ -53,6 +53,17 @@
               android:textSize="18dp"
               android:textStyle="bold"/>
 
+          <TextView
+              android:layout_marginLeft="10dp"
+              android:layout_marginBottom="10dp"
+              android:layout_marginRight="10dp"
+              android:id="@+id/like"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Author"
+              android:textSize="18dp"
+              android:textStyle="bold"/>
+
       </LinearLayout>
 
       <LinearLayout
@@ -76,6 +87,8 @@
               android:src="@drawable/delete"/>
 
       </LinearLayout>
+
+
 
   </LinearLayout>
 

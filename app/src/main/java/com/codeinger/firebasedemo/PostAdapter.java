@@ -40,11 +40,11 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PastV
     @Override
     protected void onBindViewHolder(@NonNull PastViewHolder holder, final int i, @NonNull final Post post) {
 
-
-
-        holder.title.setText(post.getTitle());
-        holder.description.setText(post.getDescription());
-        holder.author.setText(post.getAuthor());
+        holder.title.setText("Title : "+post.getTitle());
+        holder.description.setText("Des. : "+post.getDescription());
+        holder.author.setText("Author : "+post.getAuthor());
+        holder.like.setText("Like : "+post.getLike());
+        holder.like.setVisibility(View.GONE);
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,7 +126,7 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PastV
 
     class PastViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title,description,author;
+        TextView title,description,author,like;
         ImageView edit,delete;
 
 
@@ -139,6 +139,7 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PastV
             author = itemView.findViewById(R.id.author);
             edit = itemView.findViewById(R.id.edit);
             delete = itemView.findViewById(R.id.delete);
+            like = itemView.findViewById(R.id.like);
 
 
         }

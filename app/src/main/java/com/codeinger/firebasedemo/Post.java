@@ -4,6 +4,7 @@ public class Post {
     String title;
     String description;
     String author;
+    long like;
 
     public Post() {
     }
@@ -14,7 +15,16 @@ public class Post {
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", author='" + author + '\'' +
+                ", like='" + like + '\'' +
                 '}';
+    }
+
+    public long getLike() {
+        return like;
+    }
+
+    public void setLike(long like) {
+        this.like = like;
     }
 
     public String getTitle() {
