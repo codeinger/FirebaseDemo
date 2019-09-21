@@ -25,6 +25,7 @@ public class PostListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private PostAdapter adapter;
     private FloatingActionButton add;
+    private DatabaseReference post;
 
 
 
@@ -36,10 +37,46 @@ public class PostListActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        post = FirebaseDatabase.getInstance().getReference().child("Post");
+
+
+        //Query query = post.orderByChild("title");
+
+
+        Query query = FirebaseDatabase.getInstance().getReference().child("Mobile");
+        query.orderByValue().addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Log.i("dsjcbjhsbdch", "onChildAdded: "+dataSnapshot.toString());
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        Query query1 = post.orderByKey();
 
         FirebaseRecyclerOptions<Post> options =
                 new FirebaseRecyclerOptions.Builder<Post>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Post"), Post.class)
+                        .setQuery(query1, Post.class)
                         .build();
 
         adapter = new PostAdapter(options,this);

@@ -44,7 +44,7 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post, PostAdapter.PastV
         holder.description.setText("Des. : "+post.getDescription());
         holder.author.setText("Author : "+post.getAuthor());
         holder.like.setText("Like : "+post.getLike());
-        holder.like.setVisibility(View.GONE);
+
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
