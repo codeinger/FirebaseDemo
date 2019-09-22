@@ -9,22 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".authantication.SplashActivity">
+
+        <activity android:name=".ReadMiltiplePostActivity" />
+        <activity android:name=".PostListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".authantication.DashBoardActivity" />
-        <activity android:name=".authantication.EmailRegistrationActivity" >
-        </activity>
-        <activity android:name=".authantication.EmailLoginActivity" />
-        <activity android:name=".realtimedatabase.ReadMiltiplePostActivity" />
-        <activity android:name=".realtimedatabase.PostListActivity">
-
-        </activity>
-        <activity android:name=".realtimedatabase.AddPostActivity" />
+        <activity android:name=".AddPostActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

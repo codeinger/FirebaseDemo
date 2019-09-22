@@ -1,4 +1,4 @@
-package com.codeinger.firebasedemo.realtimedatabase;
+package com.codeinger.firebasedemo;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -14,7 +14,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.codeinger.firebasedemo.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;

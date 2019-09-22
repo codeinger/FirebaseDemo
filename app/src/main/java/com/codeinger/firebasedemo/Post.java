@@ -1,4 +1,4 @@
-package com.codeinger.firebasedemo.realtimedatabase;
+package com.codeinger.firebasedemo;
 
 public class Post {
     String title;

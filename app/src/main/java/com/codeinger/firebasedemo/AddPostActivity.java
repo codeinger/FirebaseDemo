@@ -1,4 +1,4 @@
-package com.codeinger.firebasedemo.realtimedatabase;
+package com.codeinger.firebasedemo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,6 +58,8 @@ public class AddPostActivity extends AppCompatActivity {
     }
 
     private void readRealTime() {
+
+
         Post.child("-Ln9F3Km8HlwqS0oaD9Q")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
