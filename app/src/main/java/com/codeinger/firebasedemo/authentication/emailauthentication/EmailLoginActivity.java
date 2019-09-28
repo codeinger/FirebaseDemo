@@ -1,4 +1,4 @@
-package com.codeinger.firebasedemo.authantication;
+package com.codeinger.firebasedemo.authentication.emailauthentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +10,11 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codeinger.firebasedemo.R;
+import com.codeinger.firebasedemo.authentication.DashBoardActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -74,7 +74,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(EmailLoginActivity.this, "Login Successful.... ", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(EmailLoginActivity.this,DashBoardActivity.class));
+                        startActivity(new Intent(EmailLoginActivity.this, DashBoardActivity.class));
                         finish();
                     }
                 })

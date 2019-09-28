@@ -1,4 +1,4 @@
-package com.codeinger.firebasedemo.authantication;
+package com.codeinger.firebasedemo.authentication.emailauthentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codeinger.firebasedemo.R;
+import com.codeinger.firebasedemo.authentication.DashBoardActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -111,7 +112,7 @@ public class EmailRegistrationActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         Toast.makeText(EmailRegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(EmailRegistrationActivity.this,DashBoardActivity.class));
+                                        startActivity(new Intent(EmailRegistrationActivity.this, DashBoardActivity.class));
                                         finish();
                                     }
                                 });
