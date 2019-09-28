@@ -148,12 +148,36 @@ public class UploadImageActivity extends AppCompatActivity {
 
         if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
             final Uri resultUri = UCrop.getOutput(data);
-            imageView.setImageURI(null);
-            imageView.setImageURI(resultUri);
+            upload(resultUri);
         } else if (resultCode == UCrop.RESULT_ERROR) {
             final Throwable cropError = UCrop.getError(data);
             Log.i("dsjknjsdkn", "onActivityResult: "+cropError.getMessage());
         }
+    }
+
+
+    void upload(Uri uri){
+        loader.setVisibility(View.VISIBLE);
+        final StorageReference riversRef = FirebaseStorage.getInstance().getReference().child("Temp/"+System.currentTimeMillis()+".png");
+        riversRef.putFile(uri).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Log.i("dscgjdshv", "onFailure: "+exception.getMessage());
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                riversRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        loader.setVisibility(View.GONE);
+                        imageView.setImageURI(null);
+                        Picasso.get().load(uri).into(imageView);
+                    }
+                });
+
+            }
+        });
     }
 
 
