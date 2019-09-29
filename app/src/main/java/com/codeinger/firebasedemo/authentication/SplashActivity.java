@@ -8,6 +8,7 @@ import android.os.Handler;
 
 import com.codeinger.firebasedemo.R;
 import com.codeinger.firebasedemo.authentication.emailauthentication.EmailLoginActivity;
+import com.codeinger.firebasedemo.authentication.googleauthentication.GoogleLoginActivity;
 import com.codeinger.firebasedemo.authentication.phoneauthentication.PhoneLoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -22,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(FirebaseAuth.getInstance().getCurrentUser()==null){
-                    startActivity(new Intent(SplashActivity.this,PhoneLoginActivity.class));
+                    startActivity(new Intent(SplashActivity.this,GoogleLoginActivity.class));
                     finish();
                 }
                 else {
@@ -31,7 +32,6 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         },3000);
-
 
     }
 }

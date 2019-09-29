@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.codeinger.firebasedemo.R;
 import com.codeinger.firebasedemo.authentication.emailauthentication.EmailLoginActivity;
+import com.codeinger.firebasedemo.authentication.googleauthentication.GoogleLoginActivity;
 import com.codeinger.firebasedemo.authentication.phoneauthentication.PhoneLoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -27,7 +28,7 @@ public class DashBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(DashBoardActivity.this,PhoneLoginActivity.class));
+                startActivity(new Intent(DashBoardActivity.this, GoogleLoginActivity.class));
                 finish();
             }
         });
