@@ -167,7 +167,6 @@
 
     </LinearLayout>
 
-
     <com.tuyenmonkey.mkloader.MKLoader
         android:id="@+id/loader"
         android:visibility="gone"

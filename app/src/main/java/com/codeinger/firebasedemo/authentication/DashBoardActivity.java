@@ -8,9 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.codeinger.firebasedemo.R;
-import com.codeinger.firebasedemo.authentication.emailauthentication.EmailLoginActivity;
-import com.codeinger.firebasedemo.authentication.googleauthentication.GoogleLoginActivity;
-import com.codeinger.firebasedemo.authentication.phoneauthentication.PhoneLoginActivity;
+import com.codeinger.firebasedemo.authentication.facebookauthentication.FaceBookLoginActivity;
+import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class DashBoardActivity extends AppCompatActivity {
@@ -28,7 +27,8 @@ public class DashBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(DashBoardActivity.this, GoogleLoginActivity.class));
+                LoginManager.getInstance().logOut();
+                startActivity(new Intent(DashBoardActivity.this, FaceBookLoginActivity.class));
                 finish();
             }
         });

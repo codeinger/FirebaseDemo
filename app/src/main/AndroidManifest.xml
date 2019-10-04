@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.codeinger.firebasedemo">
 
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,27 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".authentication.googleauthentication.GoogleLoginActivity"></activity>
-        <activity android:name=".authentication.phoneauthentication.VerificationActivity"></activity>
-        <activity android:name=".authentication.phoneauthentication.PhoneLoginActivity"></activity>
-        <activity
-            android:name="com.yalantis.ucrop.UCropActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".storage.UploadImageActivity"></activity>
-        <activity android:name=".authentication.SplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".authentication.DashBoardActivity"></activity>
-        <activity android:name=".authentication.emailauthentication.EmailRegistrationActivity" />
-        <activity android:name=".authentication.emailauthentication.EmailLoginActivity" />
-        <activity android:name=".realtimedatabase.ReadMiltiplePostActivity" />
-        <activity android:name=".realtimedatabase.PostListActivity" />
-        <activity android:name=".realtimedatabase.AddPostActivity" />
 
         <meta-data android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"/>
@@ -50,13 +36,33 @@
         </activity>
 
 
+
+
+        <activity android:name=".authentication.facebookauthentication.FaceBookLoginActivity"></activity>
+        <activity android:name=".authentication.googleauthentication.GoogleLoginActivity" />
+        <activity android:name=".authentication.phoneauthentication.VerificationActivity" />
+        <activity android:name=".authentication.phoneauthentication.PhoneLoginActivity" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".storage.UploadImageActivity" />
+        <activity android:name=".authentication.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".authentication.DashBoardActivity" />
+        <activity android:name=".authentication.emailauthentication.EmailRegistrationActivity" />
+        <activity android:name=".authentication.emailauthentication.EmailLoginActivity" />
+        <activity android:name=".realtimedatabase.ReadMiltiplePostActivity" />
+        <activity android:name=".realtimedatabase.PostListActivity" />
+        <activity android:name=".realtimedatabase.AddPostActivity" />
+
+
     </application>
-
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 
 
 
