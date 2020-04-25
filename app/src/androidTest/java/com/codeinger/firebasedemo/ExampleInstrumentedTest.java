@@ -1,4 +1,4 @@
-package com.codeinger.connectfirebasewithandroid;
+package com.codeinger.firebasedemo;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.codeinger.connectfirebasewithandroid", appContext.getPackageName());
+        assertEquals("com.codeinger.firebasedemo", appContext.getPackageName());
     }
 }
